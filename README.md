@@ -88,3 +88,17 @@ git push -u origin main
 ## 六、下一步（P1）
 
 环境跑通后，进入路线 P1：Python 核心语法 + 高级特性，目标产出 `neurocards`（终端间隔重复背题系统）。
+
+## 七、笔记知识库（notes/）
+
+学习笔记统一放在 [`notes/`](notes/README.md)，**按知识点查找**是主入口：
+
+| 入口 | 用途 |
+| --- | --- |
+| [notes/INDEX.md](notes/INDEX.md) | 📑 知识点总索引（按主题分类，找知识点看这里） |
+| [notes/TIMELINE.md](notes/TIMELINE.md) | 🗓️ 学习时间线（按日期找） |
+| [notes/topics/](notes/topics/) | ⭐ 按知识点组织的主题笔记 |
+| [notes/daily/](notes/daily/) | 每日学习记录 |
+| [notes/plans/](notes/plans/) | 学习计划 |
+
+新增笔记后运行 `python notes/tools/build_index.py` 即可自动更新索引（详见 [notes/README.md](notes/README.md)）。
