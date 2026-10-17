@@ -50,7 +50,7 @@ def main():
         print("error")
 if __name__ == "__main__":
     main()
-"""
+
 import random
 
 def rand():
@@ -60,9 +60,53 @@ def rand():
         a = int(input())
         tryies += 1
         if a == x:
+            print(f"yes caile{tryies}")
+            break
+        elif a < x:
+            print("xiao")
+        elif a > x:
+            print("da")
+
+
+
+if __name__ == '__main__':
+    rand()
+
+
+def main():
+    i = 1
+    j = 1
+    for i in range(1,10):
+        for j in range(1,i+1):
+            print(f"{i}*{j} = {i*j:<2}",end=" ")
+        print()
 
 
 
 
+if __name__ == '__main__':
+    main()
+
+def main():
+    n=int(input())
+    i=1
+    x1=1
+    x2=1
+    result=[]
+    for i in range(1,n+1):
+        if(i==1):
+            x1=1
+            result.append(x1)
+        elif(i==2):
+            x2=1
+            result.append(x2)
+        else:
+            x1,x2 =x2,x1+x2
+            result.append(x1+x2)
+    print(result)
 
 
+
+if __name__ == '__main__':
+    main()
+"""
