@@ -2,6 +2,22 @@
 
 > 这是我的 Python 学习笔记总库。**按知识点找笔记**是主入口，按日期找是辅助入口。
 
+## ⭐ 三种阅读方式（先看这个）
+
+| 方式 | 打开方式 | 体验 |
+| --- | --- | --- |
+| **① 网页书（推荐）** | 双击 [`book/Python学习笔记.html`](book/Python学习笔记.html) | 像查网页：左侧目录树点哪读哪、顶部搜索立刻定位知识点、页内小节目录、←/→ 翻页 |
+| **② Word 书** | 双击 [`book/Python学习笔记.docx`](book/Python学习笔记.docx)，WPS/Word 打开 | 像翻书：**视图 → 导航窗格（大纲）** 显示一级/二级目录，点击秒跳；目录页右键「更新域」生成页码 |
+| ③ Markdown 源文件 | `topics/` 目录 | 源文件，供写作/维护；日常阅读不需要看它 |
+
+> 两本书都由 Markdown 笔记**自动生成**，内容永远一致；改完笔记重新生成即可。
+
+## 🔁 更新流程（改完笔记后）
+
+1. 修改/新增 `topics/`、`daily/` 里的 md 笔记
+2. 双击仓库根目录的 [`一键生成笔记书.bat`](../一键生成笔记书.bat)（或命令行运行 `python notes/tools/build_book.py`）
+3. 两本书自动更新，浏览器自动打开网页书
+
 ## 一、目录结构
 
 ```
@@ -9,7 +25,10 @@ notes/
 ├── README.md            ← 你在这里：笔记系统说明
 ├── INDEX.md             ← 📑 知识点总索引（自动生成，按知识点找）
 ├── TIMELINE.md          ← 🗓️ 学习时间线（自动生成，按日期找）
-├── topics/              ← ⭐ 按知识点组织的笔记（核心内容）
+├── book/                ← ⭐ 电子书（自动生成，日常就打开这里）
+│   ├── Python学习笔记.html   ← 网页书（双击即读）
+│   └── Python学习笔记.docx   ← Word 书（WPS 导航窗格看目录）
+├── topics/              ← 按知识点组织的笔记源文件（核心内容）
 │   ├── 01-函数与程序入口.md
 │   ├── 02-字符串与格式化.md
 │   ├── 03-列表与元组.md
@@ -26,7 +45,8 @@ notes/
 ├── source/              ← 原始笔记素材（截图转写等）
 │   └── 2026-10-17/A.md ~ D.md
 ├── tools/
-│   └── build_index.py   ← 自动生成 INDEX.md / TIMELINE.md 的脚本
+│   ├── build_index.py   ← 生成 INDEX.md / TIMELINE.md
+│   └── build_book.py    ← 生成网页书 + Word 书
 └── _templates/          ← 新笔记模板
     ├── topic.md
     └── daily.md
@@ -83,8 +103,15 @@ notes/
 ## 六、维护工具
 
 ```powershell
-# 重建索引（每次新增/修改笔记后运行）
+# 重建索引（INDEX.md / TIMELINE.md）
 python notes/tools/build_index.py
+
+# 重建两本电子书（网页书 + Word 书）
+python notes/tools/build_book.py          # 只生成
+python notes/tools/build_book.py --open   # 生成并自动打开网页书
 ```
 
-脚本只读取 frontmatter、只写 `INDEX.md` 和 `TIMELINE.md`，不会动你的笔记正文，安全可重复运行。
+也可以直接双击仓库根目录的 [`一键生成笔记书.bat`](../一键生成笔记书.bat)，它会自动按顺序重建并打开网页书。
+
+> 两个脚本都只读笔记、只写生成物（INDEX/TIMELINE/book），不会动你的笔记正文，安全可重复运行。
+> 注意：`book/` 里的两本书是生成物，不要手改；要改内容请改 `topics/`、`daily/` 里的 md，然后重新生成。

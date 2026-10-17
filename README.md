@@ -91,14 +91,13 @@ git push -u origin main
 
 ## 七、笔记知识库（notes/）
 
-学习笔记统一放在 [`notes/`](notes/README.md)，**按知识点查找**是主入口：
+学习笔记已整理成**两本可随手翻的电子书**（由 Markdown 自动生成）：
 
-| 入口 | 用途 |
-| --- | --- |
-| [notes/INDEX.md](notes/INDEX.md) | 📑 知识点总索引（按主题分类，找知识点看这里） |
-| [notes/TIMELINE.md](notes/TIMELINE.md) | 🗓️ 学习时间线（按日期找） |
-| [notes/topics/](notes/topics/) | ⭐ 按知识点组织的主题笔记 |
-| [notes/daily/](notes/daily/) | 每日学习记录 |
-| [notes/plans/](notes/plans/) | 学习计划 |
+| 文件 | 打开方式 | 体验 |
+| --- | --- | --- |
+| [notes/book/Python学习笔记.html](notes/book/Python学习笔记.html) | 双击 | 🌐 网页书：左侧目录树 + 顶部搜索 + 页内小节目录 + ←/→ 翻页 |
+| [notes/book/Python学习笔记.docx](notes/book/Python学习笔记.docx) | 双击（WPS/Word） | 📖 Word 书：视图 → 导航窗格，一级/二级目录秒跳 |
+| [一键生成笔记书.bat](一键生成笔记书.bat) | 双击 | 改完笔记后一键重新生成两本书并打开 |
 
-新增笔记后运行 `python notes/tools/build_index.py` 即可自动更新索引（详见 [notes/README.md](notes/README.md)）。
+Markdown 源文件在 `notes/topics/`（按知识点）、`notes/daily/`（按日期），说明见 [notes/README.md](notes/README.md)。
+索引：[notes/INDEX.md](notes/INDEX.md)（知识点索引）、[notes/TIMELINE.md](notes/TIMELINE.md)（时间线）。
