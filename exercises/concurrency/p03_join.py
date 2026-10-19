@@ -1,31 +1,30 @@
 # -*- coding: utf-8 -*-
-"""题 03 · join：让主线程等一等
+"""第 3 题 · join：让主线程等一等
 
-3 个子线程各 sleep(1) 后打印「[子线程 x] 结束」；
-主线程最后打印「[主线程] 全部结束」。
+对应章节：教学 03 →「2、线程合并（join 方法）」
 
-要求跑两遍：
-  第一遍：不加 join   → 观察主线程那句会先出现
-  第二遍：加上 join   → 观察它变成最后出现
+在第 1 题基础上，只加 1 行：
+  1. 创建线程 t（跑 hello）
+  2. t.start()
+  3. t.join()          ← 就是这一行
+  4. 打印「主线程：我结束了」
 
-自测：
-  1. join() 阻塞的是哪个线程？
-  2. 为什么不能在 start() 之前 join()？
-  3. t.join(timeout=2) 有什么用？
+你应该看到：顺序反过来 —— 先「子线程：我醒了」，后「主线程：我结束了」。
+
+想一想：join() 阻塞的是哪个线程？
 """
 import time
 import threading
 
 
-def worker(name):
-    # TODO: sleep(1) 后打印「[子线程 x] 结束」
-    raise NotImplementedError("实现 worker()")
+def hello():
+    time.sleep(1)
+    print("子线程：我醒了")
 
 
 def main():
-    # TODO: 创建 3 个线程并 start()
-    # TODO: 第一遍先不 join，跑一次看顺序
-    # TODO: 第二遍加上 for t in threads: t.join()，再跑一次
+    t = threading.Thread(target=hello)
+    # TODO: start() 之后调用 t.join()，再打印「主线程：我结束了」
     raise NotImplementedError("实现 main()")
 
 

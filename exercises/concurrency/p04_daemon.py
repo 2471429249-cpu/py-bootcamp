@@ -1,32 +1,31 @@
 # -*- coding: utf-8 -*-
-"""题 04 · daemon：主线程退出后，子线程会怎样
+"""第 4 题 · daemon：主线程结束了子线程怎么办
 
-长任务线程：循环 10 次，每次打印心跳 + sleep(0.5)（约 5 秒）。
-主线程 sleep(1) 后打印「[主线程] 结束」。
+对应章节：教学 03 →「6、后台线程」
 
-版本 A：不设 daemon（默认 False）
-版本 B：t.daemon = True（必须在 start() 之前设置）
+要做的事：
+  1. countdown() 循环 5 次：打印「倒计时 i」，每次 sleep(0.5)
+  2. main()：创建线程 → start() → 主线程 sleep(1) → 打印「主线程结束」
+  3. 版本 A：原样跑（不设 daemon）
+  4. 版本 B：在 start() 之前加 t.daemon = True，再跑
 
-预期：
-  A → 主线程结束后程序还要再等约 4 秒（子线程要跑完）
-  B → 主线程结束程序立刻退出，心跳只打了两三次
-
-自测：
-  1. daemon 在 start() 之后设置会怎样？
-  2. 为什么 daemon 线程不适合「必须把文件写完」的任务？
+你应该看到：
+  A → 主线程结束后程序还要跑一会儿（倒计时打完 5 次）
+  B → 主线程结束后程序立刻退出（倒计时只打 2 次左右）
 """
 import time
 import threading
 
 
-def heartbeat():
-    # TODO: 循环 10 次，打印心跳并 sleep(0.5)
-    raise NotImplementedError("实现 heartbeat()")
+def countdown():
+    # TODO: 循环 5 次，打印「倒计时 i」并 sleep(0.5)
+    raise NotImplementedError("实现 countdown()")
 
 
 def main():
-    # TODO: 版本 A —— 不设 daemon，跑一次
-    # TODO: 版本 B —— t.daemon = True 之后再 start()，再跑一次
+    t = threading.Thread(target=countdown)
+    # TODO 版本 A：直接 start()，主线程 sleep(1) 后打印「主线程结束」
+    # TODO 版本 B：t.daemon = True（在 start 之前），再跑一遍对比
     raise NotImplementedError("实现 main()")
 
 
