@@ -2,7 +2,7 @@
 
 # 📑 知识点总索引
 
-> 共 **13** 个主题，**5** 个分类。按知识点找笔记从这里进；按日期找去 [TIMELINE.md](TIMELINE.md)；原始目录见 [topics/](topics/)。
+> 共 **17** 个主题，**5** 个分类。按知识点找笔记从这里进；按日期找去 [TIMELINE.md](TIMELINE.md)；原始目录见 [topics/](topics/)。
 
 ## 基础结构（4）
 
@@ -34,10 +34,14 @@
 | 排序 | `sorted`、`sort`、`key`、`lambda`、`reverse`、`排序`、`多级排序` | [06-排序](topics/06-排序.md) | 2026-10-17 |
 | 去重与词频统计 | `去重`、`保序`、`dict.fromkeys`、`Counter`、`词频`、`split`、`清洗`、`Top3` | [07-去重与词频统计](topics/07-去重与词频统计.md) | 2026-10-17 |
 
-## 进阶（3）
+## 进阶（7）
 
 | 主题 | 关键词 | 笔记 | 记录日期 |
 | --- | --- | --- | --- |
 | 生成器 | `生成器`、`yield`、`generator`、`迭代器`、`惰性求值`、`斐波那契` | [08-生成器](topics/08-生成器.md) | 2026-10-17 |
 | 迭代器与 enumerate | `迭代器`、`iterator`、`iter`、`next`、`可迭代对象`、`enumerate`、`StopIteration`、`for` | [12-迭代器与enumerate](topics/12-迭代器与enumerate.md) | 2026-10-18 |
 | 特殊方法与哈希（__eq__ / __hash__） | `特殊方法`、`魔术方法`、`__eq__`、`__hash__`、`哈希`、`hashable`、`set`、`dict`、`面试题` | [13-特殊方法与哈希](topics/13-特殊方法与哈希.md) | 2026-10-18 |
+| Enum 枚举 | `Enum`、`枚举`、`IntEnum`、`name`、`value`、`魔法值`、`状态机`、`常量` | [14-Enum枚举](topics/14-Enum枚举.md) | 2026-10-19 |
+| 类属性与实例属性 | `类属性`、`实例属性`、`self`、`class attribute`、`instance attribute`、`共享`、`可变类属性` | [15-类属性与实例属性](topics/15-类属性与实例属性.md) | 2026-10-19 |
+| 元类与 type | `元类`、`metaclass`、`type`、`一切类都源自type`、`动态造类`、`类也是对象`、`__init_subclass__` | [16-元类与type](topics/16-元类与type.md) | 2026-10-19 |
+| 线程与进程 | `线程`、`进程`、`threading`、`Thread`、`multiprocessing`、`GIL`、`Lock`、`RLock`、`Condition`、`Queue`、`Event`、`ThreadPoolExecutor`、`并发`、`并行` | [17-线程与进程](topics/17-线程与进程.md) | 2026-10-19 |

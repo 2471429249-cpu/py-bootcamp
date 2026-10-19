@@ -111,6 +111,27 @@ for i, fruit in enumerate(fruits, start=1):
     print(i, fruit)      # 1 苹果 / 2 香蕉 / 3 橘子
 ```
 
+## 5. `for` 是最标准、最常用的迭代方式
+
+> `for` 循环就是 Python 里最标准、最常用的迭代方式。
+
+```python
+for x in [1, 2, 3]:
+    print(x)
+```
+
+比 `while` + `next()` 更常用的原因：
+
+- 自动处理 `StopIteration`，不用手写 `try/except`
+- 代码短、意图清楚
+- 任何「可迭代对象」都能直接用：列表、元组、字符串、字典、文件、生成器
+
+```python
+for ch in "abc":            # 字符串
+for k in {"a": 1}:          # 字典（遍历 key）
+for line in open("f.txt"):  # 文件（逐行）
+```
+
 ## ⚠️ 易错点速记
 
 1. 迭代器**只能用一次**，耗尽后再取是空的（`list(it)` 第二次是 `[]`）
