@@ -16,6 +16,12 @@
 
 <!-- 从下面开始写，最新的一天放最上面 -->
 
+### 2026-10-22
+- 学了：`dataclass` 深入（类型注解必须、`frozen=True`、`field(init=False)`、`__post_init__` 校验）；Agent 开发环境（DeepSeek 是 OpenAI 兼容 → 零插件；langchain 1.4.7 / langgraph 1.2.16）；Langflow 1.12 接 DeepSeek（原生 DeepSeek 组件 + OpenAI Compatible）
+- 卡住：Langflow 里 Base URL 被填成了变量名 `OPENAI_COMPATIBLE_BASE_URL` 导致 SSRF 校验报错；连线接反导致 `Input data cannot be None`
+- 解决：Base URL 改成 `https://api.deepseek.com`；搞清「左进右出」连线规则；新增 4 张截图转写 → `notes/source/2026-10-22/`；新建 3 篇专题（23~25）+ 当日日记；桌面新建 `agent-lab/` 独立环境（venv + 脚手架 + 学习路线 README）
+- 明日计划：填 API Key 跑通 `00_check.py`；Langflow 练习 3（代理程序+计算器）；继续阶段测验 7~18
+
 ### 2026-10-21
 - 学了：推导式（列表/字典/集合/生成器表达式）、`.items()` 解包、类型注解（参数加冒号返回加箭头）、`pathlib`（路径是对象、判断/读写/遍历/创建删除、老手口诀）、异常处理（四件套、`raise`、异常链、自定义异常、报错名清单、3 个致命坑）
 - 卡住：（待填写）

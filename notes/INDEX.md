@@ -2,7 +2,7 @@
 
 # 📑 知识点总索引
 
-> 共 **22** 个主题，**6** 个分类。按知识点找笔记从这里进；按日期找去 [TIMELINE.md](TIMELINE.md)；原始目录见 [topics/](topics/)。
+> 共 **25** 个主题，**6** 个分类。按知识点找笔记从这里进；按日期找去 [TIMELINE.md](TIMELINE.md)；原始目录见 [topics/](topics/)。
 
 ## 基础结构（5）
 
@@ -35,7 +35,7 @@
 | 排序 | `sorted`、`sort`、`key`、`lambda`、`reverse`、`排序`、`多级排序` | [06-排序](topics/06-排序.md) | 2026-10-17 |
 | 去重与词频统计 | `去重`、`保序`、`dict.fromkeys`、`Counter`、`词频`、`split`、`清洗`、`Top3` | [07-去重与词频统计](topics/07-去重与词频统计.md) | 2026-10-17 |
 
-## 进阶（9）
+## 进阶（10）
 
 | 主题 | 关键词 | 笔记 | 记录日期 |
 | --- | --- | --- | --- |
@@ -48,10 +48,13 @@
 | 线程与进程 | `线程`、`进程`、`threading`、`Thread`、`multiprocessing`、`GIL`、`Lock`、`RLock`、`Condition`、`Queue`、`Event`、`ThreadPoolExecutor`、`并发`、`并行` | [17-线程与进程](topics/17-线程与进程.md) | 2026-10-19 |
 | 闭包 | `闭包`、`closure`、`嵌套函数`、`自由变量`、`nonlocal`、`装饰器`、`带记忆的函数` | [18-闭包](topics/18-闭包.md) | 2026-10-20 |
 | 推导式 | `推导式`、`列表推导式`、`字典推导式`、`集合推导式`、`comprehension`、`if 过滤`、`表达式` | [19-推导式](topics/19-推导式.md) | 2026-10-21 |
+| dataclass | `dataclass`、`类`、`字段声明`、`frozen`、`field`、`init=False`、`__post_init__`、`校验`、`不可变` | [23-dataclass](topics/23-dataclass.md) | 2026-10-22 |
 
-## 工程（2）
+## 工程（4）
 
 | 主题 | 关键词 | 笔记 | 记录日期 |
 | --- | --- | --- | --- |
 | 类型注解 | `类型注解`、`type hints`、`类型提示`、`箭头`、`->`、`typing`、`静态检查`、`IDE 补全` | [20-类型注解](topics/20-类型注解.md) | 2026-10-21 |
 | pathlib 路径与文件操作 | `pathlib`、`Path`、`路径`、`文件操作`、`read_text`、`write_text`、`glob`、`mkdir`、`exists`、`unlink` | [21-pathlib路径与文件操作](topics/21-pathlib路径与文件操作.md) | 2026-10-21 |
+| Agent 开发环境与 DeepSeek 接入 | `Agent`、`LangChain`、`LangGraph`、`DeepSeek`、`langchain-openai`、`base_url`、`OpenAI 兼容`、`venv`、`环境` | [24-Agent开发环境与DeepSeek](topics/24-Agent开发环境与DeepSeek.md) | 2026-10-22 |
+| Langflow 基础操作 | `Langflow`、`可视化`、`组件`、`连线`、`Playground`、`代理程序`、`提示模板`、`报错排查` | [25-Langflow基础操作](topics/25-Langflow基础操作.md) | 2026-10-22 |
