@@ -16,6 +16,13 @@
 
 <!-- 从下面开始写，最新的一天放最上面 -->
 
+### 2026-10-23
+- 学了：代码路线全部跑通（00 自检 / 01 调用模型 / 02 LCEL 链 / 03 工具 Agent / 04 结构化输出）；LangGraph 四概念（State/Node/Edge/条件边）；DeepSeek 是**部分** OpenAI 兼容（支持 function calling，不支持 json_schema）
+- 卡住：`04_structured.py` 报 `This response_format type is unavailable now`（DeepSeek 不支持 json_schema）；`05_langgraph_agent.py` 尚未跑通
+- 解决：结构化输出改 `method="function_calling"` 并实测通过；PowerShell 需 `.\` 前缀
+- 产出：新增专题 26-LangGraph基础；新增长篇规划 `plans/2026-10-23-LangChain-LangGraph掌握路线.md`（7 阶段 / 12~14 周）
+- 明日计划：跑通 05；给图加 checkpointer 做跨轮记忆；进阶段 1（消息体系 + LCEL 深入）
+
 ### 2026-10-22
 - 学了：`dataclass` 深入（类型注解必须、`frozen=True`、`field(init=False)`、`__post_init__` 校验）；Agent 开发环境（DeepSeek 是 OpenAI 兼容 → 零插件；langchain 1.4.7 / langgraph 1.2.16）；Langflow 1.12 接 DeepSeek（原生 DeepSeek 组件 + OpenAI Compatible）
 - 卡住：Langflow 里 Base URL 被填成了变量名 `OPENAI_COMPATIBLE_BASE_URL` 导致 SSRF 校验报错；连线接反导致 `Input data cannot be None`

@@ -150,6 +150,38 @@ def my_tool(x: int) -> int:
 
 > **不需要 async**：LangChain 的同步 API（`invoke`/`stream`）完全够用。
 
+## 8. ⚠️ DeepSeek 的「兼容性边界」（实测踩过的坑）
+
+DeepSeek 说"OpenAI 兼容"，但**是部分兼容**。实测结果：
+
+| 能力 | 支持 |
+| --- | --- |
+| 普通对话 `/chat/completions` | ✅ |
+| 函数调用（function calling） | ✅ |
+| `response_format: json_object` | ✅ |
+| **`response_format: json_schema`** | ❌ **不支持** |
+| embedding 接口 | ❌ 没有 |
+
+**踩坑现场**：`llm.with_structured_output(Movie)` 报
+`This response_format type is unavailable now`。
+
+**原因**：新版 langchain 的 `with_structured_output` **默认发 `json_schema`**。
+
+**修复**：
+
+```python
+structured = llm.with_structured_output(Movie, method="function_calling")
+```
+
+| method | 原理 | DeepSeek |
+| --- | --- | --- |
+| `json_schema` | 直接要求按 schema 返回 | ❌ |
+| `json_mode` | 返回 JSON 文本自行解析 | ✅（需额外提示） |
+| **`function_calling`** | 把结构伪装成"调用函数" | ✅ **推荐** |
+
+> **经验总结**：「OpenAI 兼容」≠「100% 兼容」。遇到报错先看它**具体**说哪项不支持，再换等价实现。
+> 通义、Kimi、智谱等国产模型也有类似差异。
+
 ## ⚠️ 易错点速记
 
 1. `base_url` 写成 `https://api.deepseek.com/v1` 再让组件补 `/v1` → 变成 `/v1/v1`，报错
@@ -158,6 +190,7 @@ def my_tool(x: int) -> int:
 4. `.env` 提交进 Git → 密钥泄露（务必 `.gitignore`）
 5. 以为要装"DeepSeek 插件" → 恰恰是最危险的做法
 6. 想用 DeepSeek 做 embedding → 它没有，得另找方案
+7. `with_structured_output` 忘了 `method="function_calling"` → DeepSeek 报 `json_schema` 不支持
 
 ## 🔗 关联
 
